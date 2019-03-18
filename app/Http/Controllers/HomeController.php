@@ -38,17 +38,18 @@ class HomeController extends Controller
     {
         $post = Post::find($idPost);
 
-        // $this->authorize('update-post', $post);  //esta é uma maneira
+        //  $this->authorize('update-post', $post);  //esta é uma maneira
+
         if (Gate::denies('update-post', $post)) {
                 abort(403, 'Não autorizado!');
+        
+            return view('update-post', compact('post'));
+           // return 'teste';
         }
-
-        return view('update-post', compact('post'));
-        // return 'teste';
 
     }
 
-    public function rolesPermission()
+    public function rolesPermission() //serve para testar (debugar a aplicação) em uma rota "role-permission"
     {
         $nameUser = auth()->user()->name;
           echo("<h1>{$nameUser}</h1>");
