@@ -18,7 +18,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // App\Post::class => App\Policies\ModelPolicy::class,
+        App\Post::class => App\Policies\ModelPolicy::class,
     ];
 
     /**
@@ -32,10 +32,10 @@ class AuthServiceProvider extends ServiceProvider
           return $this->registerPolicies($gate);
 
           
-
+        /*
         $gate->define('update-post', function(User $user, Post $post){
             return $user->id == $post->user_id;
-        });
+        }); */
 
     //retorna todas os papeis que ousuario pode realizar vinculadas as permições
     // EX: view_post -> adm, manager, edit

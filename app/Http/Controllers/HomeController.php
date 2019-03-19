@@ -42,10 +42,11 @@ class HomeController extends Controller
 
         if (Gate::denies('update-post', $post)) {
                 abort(403, 'Não autorizado!');
-        
+
+         }
             return view('update-post', compact('post'));
            // return 'teste';
-        }
+       
 
     }
 
