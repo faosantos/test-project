@@ -54,12 +54,10 @@ class User extends Authenticatable
     {
             //verifica se o usuario tem as permissões e retorna true ou false
             if(is_array($roles) || is_object($roles)){
-            
-                return !! $roles->intersect($this->roles)->count();
-
+                
+                    return !! $roles->intersect($this->roles)->count();
             }
-       
-                return $this->roles->contains('name',$roles);
+                     return $this->roles->contains('name',$roles);
 
     }
 }

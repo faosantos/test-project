@@ -29,7 +29,7 @@ class HomeController extends Controller
     {
         $posts = $post->all(); //Traz todos os posts de todos os usuarios.
 
-    //    $posts = $post->where('user_id', auth()->user()->id)->get();
+    //    $posts = $post->where('user_id', auth()->user()->id)->get(); //Traz os posts de cada usuarios.
 
         return view('home', compact('posts'));
     }
