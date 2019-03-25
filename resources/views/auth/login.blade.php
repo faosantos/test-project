@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-	<title>Login V2</title>
+	<title>Login </title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -36,10 +36,10 @@
                 <form method="POST" action="{{ route('login') }}"class="login100-form validate-form">
                         @csrf
 					<span class="login100-form-title p-b-26">
-						Welcome
+						bem vindo  <!-- nome do App -->
 					</span>
 					<span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
+						<i class="zmdi zmdi-font"></i> <!-- logotipo do App -->
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
@@ -82,7 +82,7 @@
                         @endif
                         <br/>
 						<span class="txt1">
-							Don’t have an account?
+							Não tem uma conta?
 						</span>
                         <a class="txt2" href="{{route('register')}}">
 							Registre-se
