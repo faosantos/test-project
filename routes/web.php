@@ -24,8 +24,10 @@ Auth::routes();
      return view('welcome');
  });
 
+ 
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/painel', 'HomeController@index')->name('painel');
 
 Route::get('/post/{id}/update', 'HomeController@update');
 

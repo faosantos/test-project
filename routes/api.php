@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 | API Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
+| Aqui é onde você pode registrar as rotas da API para o seu aplicativo. Estes
+| rotas são carregadas pelo RouteServiceProvider dentro de um grupo que
+| é atribuído o grupo de middleware "api". Aproveite para criar sua API!
 |
 */
 

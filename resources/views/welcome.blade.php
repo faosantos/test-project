@@ -81,7 +81,7 @@
 
             <div class="content">
                <h1>
-                   Hom page do site
+                   Home page do site
                </h1>
                     <a href="/login">Entrar</a>
                 </div>

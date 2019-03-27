@@ -25,13 +25,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Post $post)
+     public function index(Post $post)
+    //public function index()
     {
         $posts = $post->all(); //Traz todos os posts de todos os usuarios.
 
     //    $posts = $post->where('user_id', auth()->user()->id)->get(); //Traz os posts de cada usuarios.
 
         return view('home', compact('posts'));
+         //return view('painel.home.index');
     }
 
     public function update($idPost)

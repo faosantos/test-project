@@ -86,7 +86,7 @@
 
 	<div class="footer actions">
 		<div class="container text-center">
-			<p class="footer">EspecializaTi - Todos os direitos reservados</p>
+			<p class="footer">Fernando Santos - Todos os direitos reservados</p>
 		</div>
 	</div>
 
