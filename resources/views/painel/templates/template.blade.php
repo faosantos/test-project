@@ -24,7 +24,7 @@
 		<ul class="menu col-md-12">
 			<li class="col-md-2 text-center">
 				<a href="home">
-					<img src={{ url("assets/painel/imgs/acl-branca.png")}} alt="LaraMuic" class="logo">
+					<img src={{ url("assets/painel/imgs/logo.png")}} alt="LaraMuic" class="logo">
 				</a>
 			</li>
 			<li class="col-md-2 text-center">

@@ -7,7 +7,7 @@
 
 Route::group(['prefix' => 'painel'], function () {
 
-    Route::get('/', 'PainelController@index');
+    Route::get('/', 'Painel\PainelController@index');
     
 });
 
