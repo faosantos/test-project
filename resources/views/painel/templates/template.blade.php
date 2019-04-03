@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{{$titulo or 'Painel ACL - Curso de Laravel'}}</title>
+        <title>{{'Painel do Sistema'}}</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -24,7 +24,7 @@
             <ul class="menu col-md-12">
                 <li class="col-md-2 text-center">
                     <a href="/painel">
-                        <img src="{{url('assets/painel/imgs/acl-branca.png')}}" alt="acl" class="logo">
+                        <img src="{{url('assets/painel/imgs/logo.png')}}" alt="acl" class="logo">
                     </a>
                 </li>
                 @can('user')
@@ -103,7 +103,7 @@
 
         <div class="footer actions">
             <div class="container text-center">
-                <p class="footer">EspecializaTi - Todos os direitos reservados</p>
+                <p class="footer">Fernando Santos - Todos os direitos reservados</p>
             </div>
         </div>
 

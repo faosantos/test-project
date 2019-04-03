@@ -25,7 +25,7 @@
             </li>
             <li class="col-md-6 text-center">
                 <a href="/painel/users">
-                    <img src="{{url("assets/painel/imgs/perfil-acl.png")}}" alt="UsuĂ¡rios" class="img-menu">
+                    <img src="{{url("assets/painel/imgs/perfil-acl.png")}}" alt="Usuários" class="img-menu">
                     <h1>{{$totalUsers}}</h1>
                 </a>
             </li>
