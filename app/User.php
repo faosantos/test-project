@@ -11,7 +11,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
+   /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -28,36 +28,23 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
+    
     public function roles()
     {
-
         return $this->belongsToMany(\App\Role::class);
-
     }
-
+    
     public function hasPermission(Permission $permission)
     {
         return $this->hasAnyRoles($permission->roles);
     }
-
+    
     public function hasAnyRoles($roles)
     {
-            //verifica se o usuario tem as permissões e retorna true ou false
-            if(is_array($roles) || is_object($roles)){
-                
-                    return !! $roles->intersect($this->roles)->count();
-            }
-                     return $this->roles->contains('name',$roles);
-
+        if(is_array($roles) || is_object($roles) ) {
+            return !! $roles->intersect($this->roles)->count();
+        }
+        
+        return $this->roles->contains('name', $roles);
     }
 }
