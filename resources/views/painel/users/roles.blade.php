@@ -20,7 +20,7 @@
 
 <div class="container">
     <h1 class="title">
-        Roles <-> User : <b>{{$user->name}}</b>
+        Papéis do usuário : <b>{{$user->name}}</b>
     </h1>
 
     <table class="table table-hover">

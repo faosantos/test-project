@@ -23,7 +23,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = $this->post->all();
-            //abort(403, 'Not Permissions Lists Post');
+            //abort(403, 'Não possui permissão para visualizar a lista de POSTS');
         
         return view('painel.posts.index', compact('posts'));
     }

@@ -22,11 +22,6 @@
     <body>
         <div class="menu">
             <ul class="menu col-md-12">
-                <li class="col-md-2 text-center">
-                    <a href="/painel">
-                        <img src="{{url('assets/painel/imgs/logo.png')}}" alt="acl" class="logo">
-                    </a>
-                </li>
                 @can('user')
                 <li class="col-md-2 text-center">
                     <a href="/painel/users">
@@ -83,12 +78,29 @@
                     <h1>Not Permission</h1>
                 </li>
                 @endcan
-
-
+				
+				@can('user')
+                <li class="col-md-2 text-center">
+                    <a href="/painel/gallerys">
+                        <img src="{{url('assets/painel/imgs/camera3.png')}}" alt="Meu Perfil" class="img-menu">
+                        <h1>Galeria</h1>
+                    </a>
+                </li>
+                @else
+                <li class="col-md-2 text-center">
+                    <img src="{{url('assets/painel/imgs/camera3.png')}}" alt="Meu Perfil" class="img-menu">
+                    <h1>Not Permission</h1>
+                </li>
+                @endcan
                 <li class="col-md-2 text-center">
                     <a href="/logout">
                         <img src="{{url('assets/painel/imgs/sair-acl.png')}}" alt="Sair" class="img-menu">
                         <h1>Sair</h1>
+                    </a>
+                </li>
+				 <li class="col-md-2 text-center">
+                    <a href="/painel">
+                        <img src="{{url('assets/painel/imgs/logo.png')}}" alt="acl" class="logo">
                     </a>
                 </li>
             </ul>

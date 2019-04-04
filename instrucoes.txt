@@ -1,3 +1,8 @@
 curso onde foi feito
 
 https://www.youtube.com/watch?v=1bwMkE5zjH8&list=PLVSNL1PHDWvTch1r8uTSluw9SkzSA9cDJ&index=15
+
+Foi integrado uma parte da galeria com o projeto test-permission.
+
+para rodar ele tem que colocar o comando para gerar os seeders.
+tambem.
