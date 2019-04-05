@@ -16,8 +16,8 @@ class PermissionController extends Controller
     {
         $this->permission = $permission;
         
-        if( Gate::denies('adm') ) 
-            return abort(403, 'Não Autorizado!');
+        // if( Gate::denies('adm') ) //Com este if colocado ele bloqueia o acesso do usuário
+        //     return abort(403, 'Não Autorizado!');
     }
     
     public function index()

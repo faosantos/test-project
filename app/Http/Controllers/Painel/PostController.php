@@ -12,11 +12,11 @@ class PostController extends Controller
 {
     private $post;
     
-    public function __construct(Post $post)
+    public function __construct(Post $post)//injeta o objeto
     {
-        $this->post = $post;
+        $this->post = $post;//chama ele
         
-        if( Gate::denies('view_post') ) 
+        if( Gate::denies('view_post') ) //da a permissão de visualizar
             return redirect()->back();
     }
     

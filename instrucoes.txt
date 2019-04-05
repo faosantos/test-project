@@ -4,5 +4,23 @@ https://www.youtube.com/watch?v=1bwMkE5zjH8&list=PLVSNL1PHDWvTch1r8uTSluw9SkzSA9
 
 Foi integrado uma parte da galeria com o projeto test-permission.
 
-para rodar ele tem que colocar o comando para gerar os seeders.
-tambem.
+para rodar ele tem que colocar o comando para gerar os seeders. php artisan make:seeder UsersTableSeeder
+e configurar.
+Rodar a Seeder:
+Uma vez que criou a classe de Seeder, e registrou o próximo passo é simplesmente rodar e criar o novo registro, em nosso caso criar um novo usuário, para isso rode este comando:
+
+1
+php artisan db:seed
+Este comando vai rodar todas as classes de Seeders registradas na classe DatabaseSeeder.
+
+É possível também especificar qual classe de seeder vai rodar ao executar o comando, veja:
+
+1
+php artisan db:seed --class=UsersTableSeeder
+Neste caso mesmo que tenha várias classes de Seeders registradas vai rodar apenas a UsersTableSeeder.
+
+Também é possível criar as Seeders no momento que criar as tabelas através do recurso de migration, veja como:
+
+1
+php artisan migrate:refresh --seed
+Este comando vai recriar as tabelas e automaticamente rodas as Seeders registradas.

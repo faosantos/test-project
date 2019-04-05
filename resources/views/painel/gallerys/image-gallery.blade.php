@@ -1,6 +1,6 @@
 
 
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html>
 <head>
     <title>Galeria de imagens</title>
@@ -32,15 +32,28 @@
         padding: 15px;
     }
     </style>
-</head>
+</head> --}}
+@extends('painel.templates.template')
+
+@section('head')
+
+    @component('painel.componentes.hed_gallery')
+        
+    @endcomponent
+    
+@endsection
+
+
+@section('content')
+
 <body>
 
 
 <div class="container">
 
 
-    <h3>Teste - Galeria de imagens</h3>
-    <form action="{{ url('image-gallery') }}" class="form-image-upload" method="POST" enctype="multipart/form-data">
+    <h3> Galeria de imagens</h3>
+    <form action="{{ url('gallerys') }}" class="form-image-upload" method="POST" enctype="multipart/form-data">
 
 
         {!! csrf_field() !!}
@@ -98,7 +111,7 @@
                             <small class='text-muted'>{{ $image->title }}</small>
                         </div> <!-- text-center / end -->
                     </a>
-                    <form action="{{ url('image-gallery',$image->id) }}" method="POST">
+                    <form action="{{ url('gallerys',$image->id) }}" method="POST">
                     <input type="hidden" name="_method" value="delete">
                     {!! csrf_field() !!}
                     <button type="submit" class="close-icon btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
@@ -114,7 +127,18 @@
 
 </body>
 
-<script type="text/javascript">
+@endsection
+
+@section('footer')
+
+    @component('painel.componentes.footer_gallery')
+        
+    @endcomponent
+    
+@endsection
+
+
+{{-- <script type="text/javascript">
     $(document).ready(function(){
         $(".fancybox").fancybox({
             openEffect: "none",
@@ -122,4 +146,4 @@
         });
     });
 </script>
-</html>
+</html> --}}

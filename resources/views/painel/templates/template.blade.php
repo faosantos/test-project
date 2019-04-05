@@ -82,13 +82,13 @@
 				@can('user')
                 <li class="col-md-2 text-center">
                     <a href="/painel/gallerys">
-                        <img src="{{url('assets/painel/imgs/camera3.png')}}" alt="Meu Perfil" class="img-menu">
+                        <img src="{{url('assets/painel/imgs/camera1.png')}}" alt="Meu Perfil" class="img-menu">
                         <h1>Galeria</h1>
                     </a>
                 </li>
                 @else
                 <li class="col-md-2 text-center">
-                    <img src="{{url('assets/painel/imgs/camera3.png')}}" alt="Meu Perfil" class="img-menu">
+                    <img src="{{url('assets/painel/imgs/camera1.png')}}" alt="Meu Perfil" class="img-menu">
                     <h1>Not Permission</h1>
                 </li>
                 @endcan
@@ -106,24 +106,25 @@
             </ul>
         </div><!--Menu-->
 
+        
         <div class="clear"></div>
-
+        @yield('head')
         <!--Content DinÃ¢mico-->
         @yield('content')
-
+        @yield('footer')
         <div class="clear"></div>
-
+        
         <div class="footer actions">
             <div class="container text-center">
                 <p class="footer">Fernando Santos - Todos os direitos reservados</p>
             </div>
         </div>
-
-
+     
         <!--jQuery-->
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </body>
+   
 </html>

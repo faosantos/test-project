@@ -12,11 +12,11 @@ class RoleController extends Controller
 {
     private $role;
     
-    public function __construct(Role $role)
+    public function __construct(Role $role)//injeta o objeto
     {
-        $this->role = $role;
+        $this->role = $role;//chama ele
         
-        if( Gate::denies('view_post') ) 
+        if( Gate::denies('view_post') )//da a permissão de visualizar 
             return redirect()->back();
     }
     

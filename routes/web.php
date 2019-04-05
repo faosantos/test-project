@@ -18,13 +18,15 @@ Route::group(['prefix' => 'painel'], function(){
     
     //PainelController
     Route::get('/', 'Painel\PainelController@index');
+
+    //ImageGalleryCntroller
+    Route::get('gallerys', 'Painel\ImageGalleryController@index');
+    Route::post('gallerys', 'Painel\ImageGalleryController@upload');
+    Route::delete('gallerys/{id}', 'Painel/ImageGalleryController@destroy');
 });
 
 Route::auth();
 
 Route::get('/', 'Portal\SiteController@index');
 
-//parte da galeria ainda tem que integrar com o resto
-Route::get('image-gallery', 'ImageGalleryController@index');
-Route::post('image-gallery', 'ImageGalleryController@upload');
-Route::delete('image-gallery/{id}', 'ImageGalleryController@destroy');
+

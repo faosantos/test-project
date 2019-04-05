@@ -1,12 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Painel;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\ImageGallery;
+use Gate;
 
 class ImageGalleryController extends Controller
 {
+
+    // private $gallery;
+    
+    // public function __construct(Gallery $gallery)//injeta o objeto
+    // {
+    //     $this->gallery = $gallery;//chama ele
+        
+    //     if( Gate::denies('view_post') ) //da a permissão de visualizar
+    //         return redirect()->back();
+    // }
+
     /**
      * Listing Of images gallery
      *
@@ -15,7 +28,7 @@ class ImageGalleryController extends Controller
     public function index()
     {
     	$images = ImageGallery::get();
-    	return view('image-gallery',compact('images'));
+    	return view('painel.gallerys.image-gallery',compact('images'));
     }
 
 
