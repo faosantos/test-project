@@ -36,7 +36,7 @@ class AuthServiceProvider extends ServiceProvider
             return $user->id == $post->user_id;
         });
          */
-        
+        //=================esta parte tem que ser comentada sempre que for clonar=========
         $permissions = Permission::with('roles')->get();
         foreach( $permissions as $permission )
         {

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -11,7 +12,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        // DB::table('users')->truncate();
+
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::table('users')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
         // Cria usuários demo (dados faker)
         $this->createUsers(); 
