@@ -19,10 +19,15 @@ Route::group(['prefix' => 'painel'], function(){
     //PainelController
     Route::get('/', 'Painel\PainelController@index');
 
+    // //ImageGalleryCntroller
+    // Route::get('gallerys', 'Painel\ImageGalleryController');
+    // Route::post('gallerys', 'Painel\ImageGalleryController');
+    // Route::delete('gallerys/{id}', 'Painel\ImageGalleryController');
+
     //ImageGalleryCntroller
-    Route::get('gallerys', 'Painel\ImageGalleryController@index');
-    Route::post('gallerys', 'Painel\ImageGalleryController@upload');
-    Route::delete('gallerys/{id}', 'Painel/ImageGalleryController@destroy');
+     Route::get('gallerys', 'Painel\ImageGalleryController@index');
+     Route::post('gallerys', 'Painel\ImageGalleryController@upload');
+     Route::delete('gallerys/{id}', 'Painel\ImageGalleryController@destroy');
 });
 
 Route::auth();
