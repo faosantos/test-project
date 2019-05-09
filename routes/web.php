@@ -14,7 +14,12 @@ Route::group(['prefix' => 'painel'], function(){
 
     //UserController
     Route::get('users', 'Painel\UserController@index');
-    Route::get('user/{id}/roles', 'Painel\UserController@roles');
+    Route::get('user/{id}/roles', 'Painel\UserController@roles'); //lista uma permissão do usuario
+    Route::get('/user/add', 'Painel\UserController@create');
+    Route::post('/user/add', 'Painel\UserController@store');
+    Route::get('user/{id}', 'Painel\UserController@show');//listar o usuario
+    Route::get('user/delete/{id}', 'Painel\UserController@destroy');
+    Route::post('/user/update/{id}', 'Painel\UserController@update');
     
     //PainelController
     Route::get('/', 'Painel\PainelController@index');
