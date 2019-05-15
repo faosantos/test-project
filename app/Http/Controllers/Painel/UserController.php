@@ -28,83 +28,91 @@ class UserController extends Controller
         return view('painel.users.index', compact('users'));
     }
 
+    
     public function create()
     {
-        if( Gate::denies('create_user') ) 
-        return redirect()->back();
-
-        $err=['err'=>[]];
-        return view('painel.users.form', $err);
+        return view('painel.users.include');
     }
     
+
     public function store(Request $request)
     {
-        if( Gate::denies('create_user') ) 
-        return redirect()->back();//não esquecer de dar a permissão para criar o usuario
-        $valid = [
-            'name'=> 'required|string',
-            'email'=>'required|unique:users',
-            'password' => 'required|same:confirm-password',
-        ];
-        $messages = [
-            'required' => 'preencha o campo :attribute',
-            'email.unique' => 'Email já utilizado'
-        ];
-        $validator = Validator::make($request->all(), $valid, $messages);
-        if ($validator->fails()) {
-            $err = ['err' => $validator->errors()->toArray()];
-            return view('painel.users.form', $err);
-        }
-        $user = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            
-        ];
-        $user = User::create($user);
-        if($user){
-            return redirect('/?success=true');
-        }else{
-            return redirect('/user/add?success=false&msg=Algo deu errado, confirme os campos e tente novamente');
-        }
+        //return [$request->name,  $request->phone,  $request->email,  $request->password,  $request->admin];
+        $user = new User;
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->admin = $request->admin == 'on' ? 1:0;
+        $user->save();
+        return redirect()->route('user.index')->with('message', 'Usuário criado com sucesso!');
     }
+    
 
     public function show($id)
     {
-        //não esquecer de dar a permissão para mostrar o usuario
-        $user = User::findOrFail($id);
-        return view('painel.users.view', ['user'=> $user]);
+        $value = $request->session()->get('key');
     }
-
+    
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('administerUser/alter-user', ['user'=>$user]);
+    }
+    
     public function update(Request $request, $id)
     {
-
-        if( Gate::denies('edit-user') ) 
-        return redirect()->back();
-
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($id); 
         $user->name = $request->name;
+        $user->phone = $request->phone;
         $user->email = $request->email;
-        $user->password = $request->passord;
-        $success = $user->save();
-
-        if($success){
-            return redirect('/client/' . $id . '?success=true');
-        }else{
-            return redirect('/client/' . $id . '?success=false');
-        }
+        $user->password = Hash::make($request->password);
+        $user->admin = $request->admin; 
+        $user->save();
+        return redirect()->route('user.index')->with('message', 'Usuário alterado com sucesso!');
     }
-
+    
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-        $confirm = $user->delete();
-        if($confirm)
-            return redirect('/?success=2');
-        else
-            return redirect('/?success=false');
+        $user->delete();
+        return redirect()->route('user.index')->with('message', 'Usuário excluído com sucesso!');
     }
+
+    // public function create()
+    // {
+    //     // if( Gate::denies('create_user') ) 
+    //     // return redirect()->back();
+
+    //     if(Auth::check()){
+    //         $err=['err'=>[]];
+    //     return view('painel.users.form', $err);
+    //     }else{
+    //         return redirect('painel.users.index');
+    //     }
+    // }
     
+    
+
+    // public function update(Request $request, $id)
+    // {
+
+    //     if( Gate::denies('edit-user') ) 
+    //     return redirect()->back();
+
+    //     $user = User::findOrFail($id);
+    //     $user->name = $request->name;
+    //     $user->email = $request->email;
+    //     $user->password = $request->passord;
+    //     $success = $user->save();
+
+    //     if($success){
+    //         return redirect('/user/' . $id . '?success=true');
+    //     }else{
+    //         return redirect('/user/' . $id . '?success=false');
+    //     }
+    // }
+   
     public function roles($id)
     {
         //Recupera o usuário
@@ -116,11 +124,11 @@ class UserController extends Controller
         return view('painel.users.roles', compact('user', 'roles'));
     }
     
-    public function edit($id)
-    {
-        if( Gate::denies('edit-user') ) 
-            return redirect()->back();
+    // public function edit($id)
+    // {
+    //     if( Gate::denies('edit-user') ) 
+    //         return redirect()->back();
         
-        //Show form
-    }
+    //     //Show form
+    // }
 }

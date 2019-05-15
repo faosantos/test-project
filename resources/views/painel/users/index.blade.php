@@ -6,7 +6,7 @@
 <div class="actions">
     <div class="container" style="display:flex; justify-content: space-around;">
         
-        <a class="add" href="/user/add">
+        <a class="add" href="painel/include">
             <i class="fa fa-plus-circle"></i>
         </a>
 
@@ -23,7 +23,7 @@
 
 <div class="container">
     <h1 class="title">
-        List Users
+        Lista de Usuários
     </h1>
 
     <table class="table table-hover">
@@ -38,6 +38,9 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>
+               <!--  <a href="{{url("/painel/user/$user->id/user")}}" class="permission">
+                    <i class="fa fa-unlock"></i>
+                </a> -->
                 <a href="{{url("/painel/user/$user->id/roles")}}" class="permission">
                     <i class="fa fa-unlock"></i>
                 </a>
