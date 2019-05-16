@@ -6,7 +6,7 @@
 <div class="actions">
     <div class="container" style="display:flex; justify-content: space-around;">
         
-        <a class="add" href="painel/include">
+        <a class="add" href="include">
             <i class="fa fa-plus-circle"></i>
         </a>
 
