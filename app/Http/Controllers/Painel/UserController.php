@@ -43,7 +43,7 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->admin = $request->admin == 'on' ? 1:0;
+        // $user->admin = $request->admin == 'on' ? 1:0;
         $user->save();
         return redirect()->route('user.index')->with('message', 'Usuário criado com sucesso!');
     }
@@ -51,13 +51,14 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $value = $request->session()->get('key');
+        $user = User::findOrFail($id);
+        return view('painel.users.user', compact('user'));
     }
     
     public function edit($id)
     {
         $user = User::find($id);
-        return view('administerUser/alter-user', ['user'=>$user]);
+        return view('users.alter-user', ['user'=>$user]);
     }
     
     public function update(Request $request, $id)
@@ -67,52 +68,18 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->admin = $request->admin; 
+        // $user->admin = $request->admin; 
         $user->save();
-        return redirect()->route('user.index')->with('message', 'Usuário alterado com sucesso!');
+        return redirect()->route('users.index')->with('message', 'Usuário alterado com sucesso!');
     }
     
     public function destroy($id)
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect()->route('user.index')->with('message', 'Usuário excluído com sucesso!');
+        return redirect()->route('users.index')->with('message', 'Usuário excluído com sucesso!');
     }
 
-    // public function create()
-    // {
-    //     // if( Gate::denies('create_user') ) 
-    //     // return redirect()->back();
-
-    //     if(Auth::check()){
-    //         $err=['err'=>[]];
-    //     return view('painel.users.form', $err);
-    //     }else{
-    //         return redirect('painel.users.index');
-    //     }
-    // }
-    
-    
-
-    // public function update(Request $request, $id)
-    // {
-
-    //     if( Gate::denies('edit-user') ) 
-    //     return redirect()->back();
-
-    //     $user = User::findOrFail($id);
-    //     $user->name = $request->name;
-    //     $user->email = $request->email;
-    //     $user->password = $request->passord;
-    //     $success = $user->save();
-
-    //     if($success){
-    //         return redirect('/user/' . $id . '?success=true');
-    //     }else{
-    //         return redirect('/user/' . $id . '?success=false');
-    //     }
-    // }
-   
     public function roles($id)
     {
         //Recupera o usuário
@@ -124,11 +91,4 @@ class UserController extends Controller
         return view('painel.users.roles', compact('user', 'roles'));
     }
     
-    // public function edit($id)
-    // {
-    //     if( Gate::denies('edit-user') ) 
-    //         return redirect()->back();
-        
-    //     //Show form
-    // }
 }

@@ -38,17 +38,22 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>
-               <!--  <a href="{{url("/painel/user/$user->id/user")}}" class="permission">
+               <!--  <a href="{{url("/painel/users/$user->id/user")}}" class="permission">
                     <i class="fa fa-unlock"></i>
                 </a> -->
-                <a href="{{url("/painel/user/$user->id/roles")}}" class="permission">
+                <a href="{{url("/painel/users/$user->id/roles")}}" class="permission">
                     <i class="fa fa-unlock"></i>
                 </a>
-                <a href="{{url("/painel/user/$user->id/edit")}}" class="edit">
+                <a href="{{url("/painel/users/$user->id/edit")}}" class="edit">
                     <i class="fa fa-pencil-square-o"></i>
                 </a>
-                <a href="{{url("/painel/user/$user->id/delete")}}" class="delete">
+                <a href="{{url("/painel/users/$user->id/delete")}}" class="delete">
                     <i class="fa fa-trash"></i>
+                </a>
+            </td>
+            <td>
+                <a href="{{url("/painel/users/$user->id/show")}}" class="permission">
+                    <span>Visualizar perfil</span>
                 </a>
             </td>
         </tr>
