@@ -3,7 +3,7 @@
     margin-top: 28px;
 }
 .menu{
-    background: rgba(28, 72, 70, 0.87);
+    background: rgba(13, 126, 233, 0.87);
     margin: 0px;
     padding: 0px;
 }
@@ -33,10 +33,10 @@ a:hover{text-decoration: none;}
 
 
 .actions{
-    background: #579491;
+    background: rgba(13, 126, 233, 0.87);
 }
 a.add{
-    background: rgba(28, 72, 70, 0.87);
+    background: rgba(13, 126, 233, 0.87);
     padding: 12px;
     float: left;
     margin: 5px;
@@ -56,7 +56,7 @@ ul.relatorios{
     margin: 39px 0px;
 }
 ul.relatorios li a{
-    background: rgba(28, 72, 70, 0.87);
+    background: rgba(13, 126, 233, 0.87);
     margin: 14px 0px;
     float: left;
     width: 100%;
@@ -84,7 +84,7 @@ ul.relatorios li h1{
 }
 
 h1.title{
-    color: #395F5D;
+    color: rgba(13, 126, 233, 0.87);
     font-size: 24px;
     font-weight: bold;
 }
@@ -96,7 +96,7 @@ div.login{
     margin: 70px auto;
     background: #E8E8E8;
     /* padding: 20px 10px; */
-    /* border: 1px solid rgba(28, 72, 70, 0.87); */
+    /* border: 1px solid rgba(13, 126, 233, 0.87); */
 }
 form.login{
     padding: 10px;
@@ -104,13 +104,13 @@ form.login{
 .login-header{
     text-align: center;
     padding: 10px;
-    background: rgba(28, 72, 70, 0.87);
+    background: rgba(13, 126, 233, 0.87);
 }
 img.logo-login{max-width: 150px;}
 form.login input{
     border-radius: 0px;
     height: 50px;
-    color: rgba(28, 72, 70, 0.87);
+    color: rgba(13, 126, 233, 0.87);
 }
-.btn-login{background: rgba(28, 72, 70, 0.87);width: 100%;color: #FFF !important;font-weight: bold;font-size: 18px;}
-a.recuperar{color: rgba(28, 72, 70, 0.87);}
+.btn-login{background: rgba(13, 126, 233, 0.87);width: 100%;color: #FFF !important;font-weight: bold;font-size: 18px;}
+a.recuperar{color: rgba(13, 126, 233, 0.87);}
