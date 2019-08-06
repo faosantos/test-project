@@ -52,7 +52,7 @@
                 </a>
             </td>
             <td>
-                <a href="{{url("/painel/users/$user->id/show")}}" class="permission">
+                <a href="{{url("/painel/users/$user->id/user")}}" class="permission">
                     <span>Visualizar perfil</span>
                 </a>
             </td>

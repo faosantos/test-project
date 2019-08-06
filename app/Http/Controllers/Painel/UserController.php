@@ -49,11 +49,11 @@ class UserController extends Controller
     }
     
 
-    public function show($id)
-    {
-        $user = User::findOrFail($id);
-        return view('painel.users.user', compact('user'));
-    }
+    // public function show($id)
+    // {
+    //     $user = User::findOrFail($id);
+    //     return view('painel.users.user', compact('user'));
+    // }
     
     public function edit($id)
     {
@@ -78,6 +78,13 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return redirect()->route('users.index')->with('message', 'Usuário excluído com sucesso!');
+    }
+    public function one_user($id)
+    {
+        //Recupera o usuário
+        $user = $this->user->find($id);
+              
+        return view('painel.users.user', compact('user'));
     }
 
     public function roles($id)

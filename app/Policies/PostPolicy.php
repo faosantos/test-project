@@ -29,6 +29,6 @@ class PostPolicy
     
     public function before(User $user)
     {
-        return $user->name == 'Carlos';
+        return $user->name == 'Fernando';
     }
 }

@@ -22,7 +22,7 @@ class AuthServiceProvider extends ServiceProvider
     ];
 
     /**
-     * Register any application authentication / authorization services.
+     * Register any application authentication / authorization services. 
      *
      * @param  \Illuminate\Contracts\Auth\Access\Gate  $gate
      * @return void
@@ -36,7 +36,8 @@ class AuthServiceProvider extends ServiceProvider
             return $user->id == $post->user_id;
         });
          */
-        //=================esta parte tem que ser comentada sempre que for clonar=========
+        //=================Esta parte tem que ser comentada sempre que for clonar=========
+        //=================Parte responsavel por dar a permissão para rodar os comandos===
         $permissions = Permission::with('roles')->get();
         foreach( $permissions as $permission )
         {
