@@ -93,7 +93,7 @@
                 </li>
                 @endcan
                 <li class="col-md-2 text-center">
-                    <a href="/">
+                    <a href="/logout">
                         <img src="{{url('assets/painel/imgs/sair-acl.png')}}" alt="Sair" class="img-menu">
                         <h1>Sair</h1>
                     </a>
