@@ -45,7 +45,7 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         // $user->admin = $request->admin == 'on' ? 1:0;
         $user->save();
-        return redirect()->route('user.index')->with('message', 'Usuário criado com sucesso!');
+        return redirect()->route('painel.user.index')->with('message', 'Usuário criado com sucesso!');
     }
     
 
@@ -58,7 +58,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('users.alter-user', ['user'=>$user]);
+        return view('painel.users.alter-user', ['user'=>$user]);
     }
     
     public function update(Request $request, $id)
@@ -70,14 +70,14 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         // $user->admin = $request->admin; 
         $user->save();
-        return redirect()->route('users.index')->with('message', 'Usuário alterado com sucesso!');
+        return redirect()->route('painel.users.index')->with('message', 'Usuário alterado com sucesso!');
     }
     
     public function destroy($id)
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect()->route('users.index')->with('message', 'Usuário excluído com sucesso!');
+        return redirect()->route('painel.users.index')->with('message', 'Usuário excluído com sucesso!');
     }
     public function one_user($id)
     {
