@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Painel;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 use Validator;
 use Gate;
@@ -40,12 +41,12 @@ class UserController extends Controller
         //return [$request->name,  $request->phone,  $request->email,  $request->password,  $request->admin];
         $user = new User;
         $user->name = $request->name;
-        $user->phone = $request->phone;
+        // $user->phone = $request->phone;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         // $user->admin = $request->admin == 'on' ? 1:0;
         $user->save();
-        return redirect()->route('painel.user.index')->with('message', 'Usuário criado com sucesso!');
+        return redirect()->route('painel.users.index')->with('message', 'Usuário criado com sucesso!');
     }
     
 

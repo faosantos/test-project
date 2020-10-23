@@ -20,6 +20,7 @@ Route::group(['prefix' => 'painel'], function(){
     Route::post('/include', 'Painel\UserController@store');
     Route::get('/delete-user/{id}', 'Painel\UserController@destroy');
     Route::post('/user/update/{id}', 'Painel\UserController@update');
+    Route::post('/aletr-user', 'Painel\UserController@edit');
      
     //PainelController
     Route::get('/', 'Painel\PainelController@index');

@@ -44,7 +44,7 @@
                 <a href="{{url("/painel/users/$user->id/roles")}}" class="permission">
                     <i class="fa fa-unlock"></i>
                 </a>
-                <a href="{{url("/painel/users/$user->id/edit")}}" class="edit">
+                <a href="{{url("/painel/users/$user->id/alter-user")}}" class="edit">
                     <i class="fa fa-pencil-square-o"></i>
                 </a>
                 <a href="{{url("/painel/users/$user->id/delete")}}" class="delete">
